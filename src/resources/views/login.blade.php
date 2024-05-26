@@ -7,6 +7,8 @@
 @section('content')
 
 <div class="login-btn">
+    <form class="login-form" action="/login" method="post">
+    @csrf
     <input type="button" onclick="location.href='/register'" value="Register">
 </div>
 

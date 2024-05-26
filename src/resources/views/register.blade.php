@@ -7,6 +7,8 @@
 @section('content')
 
 <div class="register-btn">
+    <form class="register-form" action="/register" method="post">
+    @csrf
     <input type="button" onclick="location.href='/login'" value="Login">
 </div>
 
@@ -22,7 +24,12 @@
             </div>
             <div class="form__groupe-content">
                 <div class="form__input--text">
-                    <input type="text" name="name" value="{{ old('name') }}" />
+                    <input type="text" name="name" id="name" placeholder="例：山田 太郎"/>
+                    <p class="register-form__error-message">
+                    @error('name')
+                    {{ $message }}
+                    @enderror
+                    </p>
                 </div>
                 <div class="form__error">
                 </div>
@@ -34,7 +41,12 @@
             </div>
             <div class="form__groupe-content">
                 <div class="form__input--text">
-                    <input type="email" name="email" value="{{ old('email') }}" />
+                    <input type="email" name="email" id="email" placeholder="例：test@example.com" />
+                    <p class="register-form__error-message">
+                    @error('email')
+                    {{ $message }}
+                    @enderror
+                    </p>
                 </div>
                 <div class="form__error">
                 </div>
@@ -46,7 +58,12 @@
             </div>
             <div class="form__groupe-content">
                 <div class="form__input--text">
-                    <input type="password" name="password" value="" />
+                    <input class="register-form__input" type="password" name="password" id="password" placeholder="例：coachtech1106">
+                    <p class="register-form__error-message">
+                    @error('password')
+                    {{ $message }}
+                    @enderror
+                    </p>
                 </div>
                 <div class="form__error">
                 </div>

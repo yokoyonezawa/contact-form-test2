@@ -18,11 +18,9 @@
 
     <main>
 
-    @if (Auth::check())
     <form class="form" action="/logout" method="post">
     @csrf
     <button class="header-nav__button">ログアウト</button>
-    @endif
 
     @yield('content')
     </main>
